@@ -7,7 +7,7 @@ To execute these scripts and jupyter notebooks I've used conda to create an envi
 1. Download and install [Anaconda](https://www.anaconda.com/download/)
 1. Create an environment:
 ```bash
-conda env create -n brain_env
+conda env create -f environment.yml
 source activate brain_env
 ```
 1. Install necessary packages:
@@ -15,6 +15,8 @@ source activate brain_env
 conda install -n brain_env jupyter ipython numpy scipy scikit-learn nibabel matplotlib
 pip install nilearn nipype
 ```
+jupyter nbextension enable --py widgetsnbextension
+jupyter nbextension enable --py --sys-prefix ipyvolume
 
 ## nilearn_brain_atlases.ipynb
 

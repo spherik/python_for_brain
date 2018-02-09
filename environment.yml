@@ -1,0 +1,17 @@
+name: brain_env
+channels:
+  - defaults
+dependencies:
+  - anaconda
+  - jupyter
+  - matplotlib
+  - numpy
+  - pip
+  - python=3.6
+  - scikit-learn
+  - scipy
+  - pip:
+    - nibabel
+    - nilearn
+    - niwidgets
+    - pandas
