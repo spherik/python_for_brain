@@ -9,28 +9,11 @@ example_file = '/Applications/freesurfer/subjects/cvs_avg35_inMNI152/mri/brain.m
 example_file = '/Applications/freesurfer/subjects/cvs_avg35_inMNI152/mri/aparc+aseg.mgz'
 luf_filename = '/Applications/freesurfer/FreeSurferColorLUT.txt'
 
-# lut_filepath = resource_path(os.path.join('data', 'FreeSurferColorLUT.txt'))
-#         lut_array = np.genfromtxt(lut_filepath,
-#                                   dtype=None,
-#                                   usecols=(0, 1, 2, 3, 4, 5),
-#                                   names=['id', 'name', 'R', 'G', 'B', 'A'],
-#                                   encoding='utf-8')
-#
-#         # Fill in a few known colors, the rest will be generated if needed
-#         # Use the loop to search the id assigned to the region (using filename)
-#         region_id = 0
-#         color = [1.0, 1.0, 1.0]
-#         for line in lut_array:
-#             if line[1] == mesh_filename.split('.')[0]:
-#                 region_id = line[0]
-#                 color = [float(line[2]) / 255.0, float(line[3]) / 255.0, float(line[4]) / 255.0]
-
 def read_lut(lut_filepath):
     lut_array = np.genfromtxt(lut_filepath,
                               dtype=None,
                               usecols=(0, 1, 2, 3, 4, 5),
-                              names=['id', 'name', 'R', 'G', 'B', 'A'],
-                              encoding='utf-8')
+                              names=['id', 'name', 'R', 'G', 'B', 'A'])
 
     print(lut_array.shape)
     lut_matrix = np.zeros((lut_array.shape[0],4), int)
